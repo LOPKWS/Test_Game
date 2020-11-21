@@ -15,6 +15,9 @@ class circle{
   }
 
   show(){
+    if (this.clicked == true){
+      this.gone = true;
+    }
     ellipse(this.x, this.y, this.radius)
   }
 }
