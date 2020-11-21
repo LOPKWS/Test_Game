@@ -14,6 +14,7 @@ function setup(){
 	app.use("/Game", express.static('Client'))
 
 	//Login URLS
+  app.use('/LOGIN/login/check_login', express.static('Login_sys/public/check'))
   app.use('/LOGIN', express.static('Login_sys/public/main'))
   app.use('/LOGIN/login', express.static('Login_sys/public/login'))
   app.use('/LOGIN/Signin', express.static('Login_sys/public/sign_in'))

@@ -1,4 +1,26 @@
 
+
+
+
+function change_url(pass){
+  x = document.URL;
+
+  b = Array.from(x)
+  c = ''
+  for (let i = 0; i < 12; i++){
+    b.pop()
+  }
+  for (let step = 0; step < b.length; step++){
+    c[step] = b[step]
+  }
+
+  if (pass == true){
+    var new_url = `${c}/Game`
+    window.location.href = new_url;
+  }
+}
+
+
 //Setting na function nto handle the submit button being pressed
 const submit = (ev) => {
   //Preventing defualt action of the document when the
@@ -30,6 +52,11 @@ const submit = (ev) => {
   //Through the url user info
   fetch('/user_info', options)
   //Ressting the document form input fields
+  //console.log('p','','u','');
+  if (ps != "" || us != ""){
+    //alert('help')
+    change_url(true)
+  }
   document.forms[0].reset()
 }
 
