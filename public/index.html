@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Main Menu</title>
+  </head>
+  <body>
+    <div class="Game_div">
+      <a id='Game_link' href="">Play Game</a>
+      <script type="text/javascript">
+        var x = document.URL;
+        var new_url = `${x}Game`
+        document.getElementById("Game_link").href = new_url;
+        //alert(new_url);
+      </script>
+    </div>
+
+    <div class="Login_div">
+
+      <a id='Login_link' href="">Login</a>
+      <script type="text/javascript">
+        var x = document.URL;
+        var new_url = `${x}LOGIN`
+        document.getElementById("Login_link").href = new_url;
+        //alert(new_url);
+      </script>
+
+
+
+    </div>
+
+
+
+
+  </body>
+</html>

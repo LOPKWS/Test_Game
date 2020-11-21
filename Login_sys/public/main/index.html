@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <!-- loads a very basic css style sheet -->
+  <link rel='stylesheet' href="style.css">
+  <body>
+    <p>Hello</p>
+    <!-- Setting our links to the localhost:800/ specific site
+      Should be dependent on the main server variable port
+   -->
+   <div class="login_div">
+     <a class="one" id='login' href="">Login!</a>
+     <script type="text/javascript">
+     var x = document.URL;
+     var new_url = `${x}login`
+     document.getElementById("login").href = new_url;
+     </script>
+   </div>
+
+   <div class="Signin_link">
+     <a class='two'id="signin" href="">Sign Up!</a>
+     <script type="text/javascript">
+     var x = document.URL;
+     var new_url = `${x}Signin`
+     document.getElementById("signin").href = new_url;
+     </script>
+
+
+   </div>
+  </body>
+</html>
