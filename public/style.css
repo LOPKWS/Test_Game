@@ -1,13 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Texturina:ital,wght@1,200&display=swap');
 
 
+body {
+  background-color: #313131;
+  background-image: url('red_slime.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Home_page_1 {
+  font-family: 'Texturina', serif;
+  text-align: center;
+}
+
+.Game_div {
+ position: relative;
+ padding-top: 50px;
+ text-align: center;
+ margin: auto;
+ width: 50%;
+}
+
+.Login_div {
+ padding: 10px;
+ text-align: center;
+ margin: auto;
+ width: 50%;
+}
+
+
 a {
   font-family: 'Texturina', serif;
+  font-weight: bold;
+  font-size: 20px;
   color: black;
-  background-color: white;
+  background-color: grey;
   text-decoration: none;
   border: 2px solid black;
-  padding: 14px 25px;
+  padding: 5px 15px;
   text-align: center;
   display: inline-block;
 }

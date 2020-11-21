@@ -1,23 +1,56 @@
 /*
 I have very basic knowledge of css and how to use it
 */
+@import url('https://fonts.googleapis.com/css2?family=Texturina:ital,wght@1,200&display=swap');
+
+
 
 body {
-  background-color: darkgrey;
+  background-color: #313131;
+}
+
+.Signin_div {
+ position: relative;
+ padding-top: 50px;
+ text-align: center;
+ margin: auto;
+ width: 50%;
+}
+
+.login_div {
+ padding: 10px;
+ text-align: center;
+ margin: auto;
+ width: 50%;
+}
+
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  color: black;
+  font-family: 'Texturina', serif;
 }
 
 p {
-  font-size: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px;
   text-align: center;
   color: black;
-  font-family: serif;
+  font-family: 'Texturina', serif;
 }
 
-.one, .two{
+
+a {
+  font-family: 'Texturina', serif;
+  font-weight: bold;
+  font-size: 20px;
   color: black;
-  text-decoration: underline;
+  background-color: grey;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 5px 15px;
   text-align: center;
-  position: relative;
-  left: 80px;
-  top: 20px;
+  display: inline-block;
 }

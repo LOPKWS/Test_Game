@@ -1,23 +1,37 @@
 /*
 I have very basic knowledge of css and how to use it
 */
+@import url('https://fonts.googleapis.com/css2?family=Texturina:ital,wght@1,200&display=swap');
 
+input[type=text] {
+  z-index: 0;
+  width: 25%;
+  position: relative;
+  padding: 5px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+label {
+  font-family: 'Texturina', serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+
+button {
+  font-family: 'Texturina', serif;
+  padding: 2px;
+  font-weight: bold;
+}
 
 body {
-  background-color: darkgrey;
+  background-color: #313131;
 }
 
 p {
+  font-family: 'Texturina', serif;
   font-size: 50px;
   text-align: center;
   color: black;
-  font-family: verdana;
-}
-
-input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  background-color: black#
+  padding: 0px;
 }
