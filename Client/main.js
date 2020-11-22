@@ -7,23 +7,21 @@ data = {
   "Username": "meep"
 }
 
-let sketch = function(p) {
-  p.setup = function() {
-    maxw = windowWidth
-    maxh = windowHeight
-    p.createCanvas(maxw, maxh)
-  //  createCanvas(windowWidth, windowHeight);
-    background(50);
 
-    make_target_array(targets, 10, 60, maxw, maxh)
+function setup() {
+  maxw = windowWidth
+  maxh = windowHeight
+  createCanvas(windowWidth, windowHeight);
+  background(50);
 
-  }
-  };
-  new p5(sketch, window.document.getElementById('container'));
+  make_target_array(targets, 50, 60, maxw, maxh)
+
+}
 
 
 function draw() {
   background(50);
+  draw_score(data["score"], windowWidth, windowHeight)
 
   for (let ary_step = 0; ary_step < targets.length; ary_step ++){
     if (ary_step == 0){fill('#FE8B02');targets[ary_step].show()}
@@ -48,7 +46,7 @@ function mouseClicked(){
   if (mouseX < (targets[0].x+targets[0].radius) && mouseY < (targets[0].y+targets[0].radius)){
     if (mouseX > (targets[0].x-targets[0].radius) && mouseY > (targets[0].y-targets[0].radius)){
       data['score'] ++;
-      console.log(data['score']);
+      //console.log(data['score']);
       targets[0].clicked = true;
   }}
 }
@@ -68,4 +66,16 @@ function make_target_array(ary, number_of_targets, rad, mw, mh){
     y = rand_y(rad*2, mh)
     ary[step] = new circle(x, y, rad, .3)
   }
+}
+
+
+function draw_score(score, maxw, maxh){
+  //foont = loadFont("assets/static/Texturina-ExtraBoldItalic-opsz=20.ttf")
+  //textFont(foont);
+  x = maxw/2
+  y = maxh/10
+  fill(255)
+  textSize(20)
+  text(`Score:${score}`, x, y)
+  //console.log(x);
 }
