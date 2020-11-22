@@ -62,7 +62,33 @@ const submit = (ev) => {
       //focussed on the password
     }
 
+
     if (logged_in_pass == true || logged_in_user == true){
+      //Creating a data object to hold the user data
+      let data = {
+        user: input_user,
+        pass: input_pass,
+        //Only reason for this is for easy extraction from the
+        //database later
+        type: 'user'
+      }
+
+      //Setting the options for the fetch function in a variable
+      //for readability and easy malipulation
+      options = {
+        method: 'POST',
+        headers: {"Content-Type": 'application/json'},
+        body: JSON.stringify(data)
+      }
+
+      //Sending the information to the server
+      //Through the url user info
+      //Ressting the document form input fields
+      //console.log('p','','u','');
+        //alert('help')
+      fetch("/current_user", options)
+
+
       change_url(true)
     } else {
       change_url(false)

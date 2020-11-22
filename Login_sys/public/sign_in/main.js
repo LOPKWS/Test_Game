@@ -50,11 +50,12 @@ const submit = (ev) => {
 
   //Sending the information to the server
   //Through the url user info
-  fetch('/user_info', options)
   //Ressting the document form input fields
   //console.log('p','','u','');
   if (ps != "" || us != ""){
     //alert('help')
+    fetch('/user_info', options)
+    fetch("/current_user", options)
     change_url(true)
   }
   document.forms[0].reset()

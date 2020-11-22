@@ -2,7 +2,8 @@ const express = require('express')
 const app = express();
 const Datastore = require('nedb')
 const port = 800
-const database = new Datastore('Login_info.db');
+const user_database = new Datastore('Login_info.db');
+const score_database = new Datastore("Score_info.db")
 
 function setup(){
   app.listen(port, () => console.log(`Listening at ${port}`));
@@ -22,15 +23,42 @@ function setup(){
 
 	//Misc
 	app.use(express.json( ))
-  database.loadDatabase();
+  user_database.loadDatabase();
+  score_database.loadDatabase();
 }
 setup()
 
 app.get('/user_info_req', (request, response) => {
-  database.find({type: 'user'}, (err, data) => {
+  user_database.find({type: 'user'}, (err, data) => {
     response.json(data);
-  });
-});
+  })});
+
 app.post('/user_info', (req, res) => {
-  database.insert(req.body)
+  user_database.insert(req.body)
 })
+
+app.post('/current_user', (req, res) => {
+  current_user = req.body
+//  console.log(current_user);
+})
+
+app.get('/username_req', (request, response) => {
+    response.json(current_user)
+})
+
+app.post('/user_score', (req, res) => {
+    check_score_db(reg)
+    //console.log(reg.body);
+  })
+
+function check_score_db(reg){
+  prev = score_database.find({type: 'user'})
+  for (let i = 0; i < prev.length; i++){
+    if (reg.body.score == prev[i].score){
+      if (req.body.user == prev[i].user){
+        score_database.insert(req.body)
+      }
+    }
+  }
+}
+//      /user_score_name

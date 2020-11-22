@@ -1,10 +1,11 @@
 change_step = 0
 speed_of_change = 2
 mn = 0.3
-
+synt = false
 data = {
   "score": 0,
-  "Username": "meep"
+  "user": "z",//get_user_name()
+  "type": "user"
 }
 
 
@@ -26,6 +27,9 @@ function draw() {
   targets.show()
 
   if (targets.dead){
+    synt = true
+    send(synt)
+    synt = false
     change_url()
   }
 
@@ -92,3 +96,20 @@ function change_url(){
   window.location.href = new_url;
 
   }
+
+async function get_user_name(){
+  const response = await fetch('/username_req')
+  const db_data = await response.json()
+  console.log(db_data.user);
+}
+
+function send(sy){
+  options = {
+    method: 'POST',
+    headers: {"Content-Type": 'application/json'},
+    body: JSON.stringify(data)
+  }
+  if (sy){
+    fetch("/user_score", options)
+
+}}
