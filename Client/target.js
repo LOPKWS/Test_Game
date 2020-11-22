@@ -6,18 +6,21 @@ class circle{
     this.minamizer = minamizer;
     this.gone = false;
     this.clicked = false;
+    this.dead = false
   }
 
   shrink(){
     if ((this.radius - this.minamizer) > 0){
       this.radius = this.radius - this.minamizer
-    } else {this.gone = true;}
+    } else {this.dead = true;}
   }
 
   show(){
     if (this.clicked == true){
       this.gone = true;
     }
-    ellipse(this.x, this.y, this.radius)
+    if (this.gone == false){
+      ellipse(this.x, this.y, this.radius)
+    }
   }
 }

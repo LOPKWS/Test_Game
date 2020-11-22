@@ -12,6 +12,7 @@ function setup(){
 
 	//Game Urls
 	app.use("/Game", express.static('Client'))
+  app.use('/Game/Restart', express.static("Client/restart"))
 
 	//Login URLS
   app.use('/LOGIN/login/check_login', express.static('Login_sys/public/check'))
