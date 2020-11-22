@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Game Restart</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-
+    <title>Restart Menu</title>
   </head>
   <body>
 
+    <div class="Home_page_1">
+      <h1>Do you want to replay</h1>
+    </div>
+
+    <div class="Game_div">
+      <a id='Game_link' href="">Replay Game</a>
+      <script type="text/javascript">
+        var x = document.URL;
+
+        b = Array.from(x)
+        c = ''
+        for (let i = 0; i < 12; i++){
+          b.pop()
+        }
+        for (let step = 0; step < b.length; step++){
+          c[step] = b[step]
+        }
+
+        var new_url = `${c}/Game`
+        document.getElementById("Game_link").href = new_url;
+        //alert(new_url);
+      </script>
+    </div>
+
+    <div class="Login_div">
+      <a id='Login_link' href="">Main Menu</a>
+      <script type="text/javascript">
+        var d = document.URL;
+        //console.log(d);
+        e = Array.from(d)
+        //f = 'p                  p'
+        for (let i = 0; i < 14; i++){
+          e.pop()
+          //console.log(e);
+        }
+          f = e.toString()
+          f1 = f.replace(/,/g, '')
+
+        var new_url = `${f1}`
+        //console.log(new_url);
+        document.getElementById("Login_link").href = new_url;
+        //alert(new_url);
+      </script>
+    </div>
   </body>
 </html>
