@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <title>Scoreboard</title>
+  </head>
+  <body>
+
+    <div class="Home_page_1">
+      <h1>Top Scores</h1>
+    </div>
+
+
+
+    <div class="Back_div">
+      <a id='Back_link' href="">Back</a>
+      <script type="text/javascript">
+          var x = document.URL;
+          //console.log(x);
+          curent_str = "scoreboard"
+          b = Array.from(x)
+          //console.log(b);
+          c = ''
+          bac_lin = curent_str.length+1
+          //alert(bac_lin)
+          for (let i = 0; i < bac_lin; i++){
+            b.pop()
+            //console.log(b);
+          }
+          //console.log(b);
+
+          for (let step = 0; step < b.length; step++){
+            c += b[step]
+          }
+
+          //console.log(c);
+          var new_url = `${c}`
+          document.getElementById("Back_link").href = new_url;
+        //alert(new_url);
+       </script>
+    </div>
+
+    <div class="Score_div" id="Scores">
+    </div>
+
+    <script type="text/javascript" src="display_score.js"></script>
+  </body>
+</html>

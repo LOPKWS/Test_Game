@@ -2,12 +2,21 @@ change_step = 0
 speed_of_change = 2
 mn = 0.3
 synt = false
+
 data = {
   "score": 0,
-  "user": "z",//get_user_name()
+  "user": "filler",// get_user_name(),
   "type": "user"
 }
 
+async function get_user_name(){
+  const response = await fetch('/username_req')
+  const db_data = await response.json()
+  //alert(`In Func ${db_data.user}`)
+  data["user"] = db_data.user;
+}
+
+get_user_name()
 
 function setup() {
   maxw = windowWidth
@@ -21,17 +30,20 @@ function setup() {
 
 
 function draw() {
+
+  if (targets.dead){
+    synt = true
+    //console.log(pr);
+    send(synt)
+    targets.dead = true
+    change_url()
+  }
+
+  if (targets.dead != true){
   background(50);
   draw_score(data["score"], windowWidth, windowHeight)
   fill('#FE8B02');
   targets.show()
-
-  if (targets.dead){
-    synt = true
-    send(synt)
-    synt = false
-    change_url()
-  }
 
   if (targets.gone){
     targets = make_target_array(60, windowWidth, windowHeight, mn)
@@ -43,7 +55,7 @@ function draw() {
     change_step = 0;
   }
 
-}
+}}
 
 function mouseClicked(){
   if (mouseX < (targets.x+targets.radius) && mouseY < (targets.y+targets.radius)){
@@ -97,12 +109,6 @@ function change_url(){
 
   }
 
-async function get_user_name(){
-  const response = await fetch('/username_req')
-  const db_data = await response.json()
-  console.log(db_data.user);
-}
-
 function send(sy){
   options = {
     method: 'POST',
@@ -111,5 +117,5 @@ function send(sy){
   }
   if (sy){
     fetch("/user_score", options)
-
-}}
+    return
+} return}

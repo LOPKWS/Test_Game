@@ -12,7 +12,7 @@ body {
   text-align: center;
 }
 
-.Login_div {
+.Back_div {
  position: relative;
  padding-top: 50px;
  text-align: center;
@@ -21,10 +21,11 @@ body {
 }
 
 .Score_div {
- padding: 10px;
- text-align: center;
- margin: auto;
- width: 50%;
+  font-family: 'Texturina', serif;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 
