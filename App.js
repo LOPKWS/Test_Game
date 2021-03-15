@@ -32,6 +32,7 @@ setup()
 
 app.get('/user_info_req', (request, response) => {
   user_database.find({type: 'user'}, (err, data) => {
+    current_user = data
     response.json(data);
   })});
 
